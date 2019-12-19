@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用分页插件</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script src="./bootstrap/js/jquery-1.12.4.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./jquery.twbsPagination.js"></script>
+</head>
+
+<body>
+    <div class="row text-center">
+        <ul id="pagination" class="pagination-sm"></ul>
+    </div>
+    <button id="btn">筛选</button>
+</body>
+<script>
+    $(function () {
+        function pagination(totalPage, startPage) {
+            $('#pagination').twbsPagination('destroy');
+            $('#pagination').twbsPagination({
+                totalPages: totalPage,
+                visiblePages: 7,
+                startPage:startPage,
+                first: '首页',
+                last: "尾页",
+                prev: '上一页',
+                next: '下一页',
+                onPageClick: function (event, page) {
+
+                }
+            });
+        }
+        pagination(35,4);
+
+    })
+</script>
+
+</html>
